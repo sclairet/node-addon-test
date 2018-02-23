@@ -11,6 +11,6 @@ branches:
 build:
   ci:
     - shippable_retry npm install
-    - npm install node-gyp
+    - npm install -g node-gyp
     - node-gyp configure
     - node-gyp build
