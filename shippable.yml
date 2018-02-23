@@ -1,0 +1,16 @@
+
+language: c
+
+compiler:
+  - gcc
+
+branches:
+  only:
+    - master
+
+build:
+  ci:
+    - shippable_retry npm install
+    - npm install node-gyp
+    - node-gyp configure
+    - node-gyp build
