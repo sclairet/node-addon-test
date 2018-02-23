@@ -4,6 +4,9 @@ language: c
 compiler:
   - gcc
 
+node_js:
+  - 9.4.0
+
 branches:
   only:
     - master
