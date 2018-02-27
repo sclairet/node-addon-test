@@ -1,24 +1,18 @@
-
 language: node_js
-
 node_js:
-  - node
-
+- node
 os:
-  - linux
-  - osx
-
+- linux
+- osx
 before_install:
-  - npm install -g node-gyp
-
+- npm install -g node-gyp
 script:
-  - node-gyp configure
-  - node-gyp build
-
+- node-gyp configure
+- node-gyp build
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
-  skip_cleanup: true
+  api_key:
+    secure: RehjBoMhqLQ1spnUWXr3rdYvG08mHLBiII7w4z58UyK9ZysC2nd95ZC5fk/JriYKidx1NCcP/yVaRINgeC5TwjtvxZGVlK8dKmA2lgHLVBcDgJWVlcsAxeLcLtRJKeIjS+IjTJGvXRWN0VVeevhajV4kcWDlOWBtJrhFMQQPdTB/ZJaOqTFMCQA35HbHIUCGS3TmkDEAfo4wfmnOSRL3TrmgG4o5Pn8FSRPHayUrmqNc5O5FupG/4muR8OIMFyLHZEkIuk3Ip8PBTMvElJgbOi9b32VQsMzVEcq2zR28euTmfLvW2VR40FSVXa/xfNTLj55qjI4nmjSmGPnnxpsREcLj+TeWIpUQADyHjU0/588i1SYUj3Rh2PzllZNFk2jiORvBtE4SvMQkxL+Idb3fzgd9w6jVSdL8TnJx45PrsU1sBEAhxc6jtyvI19D49uCXqy6gA9sE3vOIgngRJj/HFuBlNfb925C1FG2cq0ogJ5GUKETkW1QfbhyL5Q1r1aICzL8BRZ6THkaNoTBR3YrW7Cd0ZA1ZycHcNH4nLztyD78LtkhqleO1sy9p4w2j1kLomnUOnPDJhiAJLRUsXYl5B/BoxlrTpQFKSgqchVLGT9IVXnoh1jPBfcJz2YqZt/Z5P7X/ec1u8Smi/F5fvg8PeUAiX1RcS0qPlxvPjWULYjo=
+  file: "$TRAVIS_BUILD_DIR/build/Release/test_addon.node"
   on:
-    tags: true
+    repo: sclairet/node-addon-test
