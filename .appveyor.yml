@@ -13,6 +13,7 @@ build_script:
 - node-gyp build
 - 7z a -ttar %APPVEYOR_BUILD_FOLDER%\build\Release\tmp.tar %APPVEYOR_BUILD_FOLDER%\build\Release\test_addon.node
 - 7z a -tgzip %APPVEYOR_BUILD_FOLDER%\build\Release\test_addon_win32.tar.gz %APPVEYOR_BUILD_FOLDER%\build\Release\tmp.tar
+appveyor_repo_tag: false
 deploy:
  provider: GitHub
  auth_token:
