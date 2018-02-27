@@ -4,10 +4,12 @@ node_js:
 os:
 - linux
 - osx
+env:
+- PLATFORM="$TRAVIS_OS_NAME"
 before_install:
 - npm install -g node-gyp
 - PLATFORM=$TRAVIS_OS_NAME
-- if [[$PLATFORM=="osx"]]; then PLATFORM="darwin"; fi;
+- if [["$PLATFORM"=="osx"]]; then PLATFORM="darwin"; fi;
 script:
 - node-gyp configure
 - node-gyp build
