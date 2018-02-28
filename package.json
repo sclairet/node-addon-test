@@ -1,0 +1,26 @@
+{
+  "name": "test_addon",
+  "version": "1.0.9",
+  "description": "",
+  "main": "./index.js",
+  "dependencies": {
+    "node-pre-gyp": "0.6.x",
+    "node-gyp": "3.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "test_addon",
+    "module_path": "./bin/",
+    "host": "https://github.com/sclairet/node-addon-test/releases/download/",
+    "remote_path": "./v{version}/",
+    "package_name": "test_addon_{platform}.tar.gz"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sclairet/node-addon-test.git"
+  }
+}
+
