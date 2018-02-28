@@ -1,6 +1,6 @@
 {
   "name": "test_addon",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "./lib/index.js",
   "dependencies": {
@@ -13,7 +13,7 @@
   },
   "binary": {
     "module_name": "test_addon",
-    "module_path": "./bin/binding/",
+    "module_path": "./bin/",
     "host": "https://github.com/sclairet/node-addon-test/releases/download/",
     "remote_path": "./v{version}/",
     "package_name": "test_addon_{platform}.tar.gz"

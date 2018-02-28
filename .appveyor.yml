@@ -11,7 +11,9 @@ build: off
 build_script:
 - node-gyp configure
 - node-gyp build
-- 7z a -ttar %APPVEYOR_BUILD_FOLDER%\build\Release\tmp.tar %APPVEYOR_BUILD_FOLDER%\build\Release\test_addon.node
+- mkdir %APPVEYOR_BUILD_FOLDER%\bin
+- copy %APPVEYOR_BUILD_FOLDER%\build\Release\test_addon.node %APPVEYOR_BUILD_FOLDER%\bin
+- 7z a -ttar %APPVEYOR_BUILD_FOLDER%\build\Release\tmp.tar %APPVEYOR_BUILD_FOLDER%\bin
 - 7z a -tgzip %APPVEYOR_BUILD_FOLDER%\build\Release\test_addon_win32.tar.gz %APPVEYOR_BUILD_FOLDER%\build\Release\tmp.tar
 artifacts:
 - path: build\Release\test_addon_win32.tar.gz
