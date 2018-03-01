@@ -8,11 +8,15 @@ env:
 - PLATFORM="$TRAVIS_OS_NAME"
 before_install:
 - npm install -g node-gyp
+- echo $PLATFORM
 - if [["$PLATFORM"=="osx"]]; then PLATFORM="darwin"; fi;
+- echo $PLATFORM
 script:
 - node-gyp configure
 - node-gyp build
-- tar cfvz $TRAVIS_BUILD_DIR/build/Release/test_addon_$TRAVIS_OS_NAME.tar.gz $TRAVIS_BUILD_DIR/build/Release/test_addon.node
+- mkdir $TRAVIS_BUILD_DIR/bin
+- cp $TRAVIS_BUILD_DIR/build/Release/test_addon.node $TRAVIS_BUILD_DIR/bin
+- tar cfvz $TRAVIS_BUILD_DIR/build/Release/test_addon_$TRAVIS_OS_NAME.tar.gz $TRAVIS_BUILD_DIR/bin
 deploy:
   provider: releases
   api_key:
