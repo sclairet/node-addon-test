@@ -10,9 +10,9 @@ before_install:
 - npm install -g node-gyp
 - echo $PLATFORM
 - |
-  if [["$PLATFORM"=="osx"]]
+  if [["$PLATFORM"==osx]]
   then
-   PLATFORM="darwin"
+   $PLATFORM=darwin
   fi
 - echo $PLATFORM
 script:
