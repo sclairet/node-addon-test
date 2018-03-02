@@ -12,7 +12,7 @@ before_install:
 - |
   if [[ "$PLATFORM" == "osx" ]]
   then
-   $PLATFORM="darwin"
+   PLATFORM="darwin"
   fi
 - echo $PLATFORM
 script:
