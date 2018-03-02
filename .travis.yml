@@ -20,7 +20,7 @@ script:
 - node-gyp build
 - mkdir $TRAVIS_BUILD_DIR/build/Release/bin
 - cp $TRAVIS_BUILD_DIR/build/Release/test_addon.node $TRAVIS_BUILD_DIR/build/Release/bin
-- tar cfvz $TRAVIS_BUILD_DIR/build/Release/test_addon_$TRAVIS_OS_NAME.tar.gz $TRAVIS_BUILD_DIR/build/Release/bin
+- tar cfvz $TRAVIS_BUILD_DIR/build/Release/test_addon_$PLATFORM.tar.gz $TRAVIS_BUILD_DIR/build/Release/bin
 deploy:
   provider: releases
   api_key:
