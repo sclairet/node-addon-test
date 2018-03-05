@@ -1,6 +1,6 @@
 {
 	"targets": [{
-		"target_name": "test_addon",
+		"target_name": "test_addon_simple_hello",
 		"sources": [
 			"src/entry_point.cpp"
 		],
