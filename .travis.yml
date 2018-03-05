@@ -22,11 +22,15 @@ script:
 - cp $TRAVIS_BUILD_DIR/build/Release/test_addon.node $TRAVIS_BUILD_DIR/build/Release/bin
 - tar cfvz $TRAVIS_BUILD_DIR/build/Release/test_addon_$PLATFORM.tar.gz $TRAVIS_BUILD_DIR/build/Release/bin
 deploy:
-  provider: releases
-  api_key:
-    secure: RehjBoMhqLQ1spnUWXr3rdYvG08mHLBiII7w4z58UyK9ZysC2nd95ZC5fk/JriYKidx1NCcP/yVaRINgeC5TwjtvxZGVlK8dKmA2lgHLVBcDgJWVlcsAxeLcLtRJKeIjS+IjTJGvXRWN0VVeevhajV4kcWDlOWBtJrhFMQQPdTB/ZJaOqTFMCQA35HbHIUCGS3TmkDEAfo4wfmnOSRL3TrmgG4o5Pn8FSRPHayUrmqNc5O5FupG/4muR8OIMFyLHZEkIuk3Ip8PBTMvElJgbOi9b32VQsMzVEcq2zR28euTmfLvW2VR40FSVXa/xfNTLj55qjI4nmjSmGPnnxpsREcLj+TeWIpUQADyHjU0/588i1SYUj3Rh2PzllZNFk2jiORvBtE4SvMQkxL+Idb3fzgd9w6jVSdL8TnJx45PrsU1sBEAhxc6jtyvI19D49uCXqy6gA9sE3vOIgngRJj/HFuBlNfb925C1FG2cq0ogJ5GUKETkW1QfbhyL5Q1r1aICzL8BRZ6THkaNoTBR3YrW7Cd0ZA1ZycHcNH4nLztyD78LtkhqleO1sy9p4w2j1kLomnUOnPDJhiAJLRUsXYl5B/BoxlrTpQFKSgqchVLGT9IVXnoh1jPBfcJz2YqZt/Z5P7X/ec1u8Smi/F5fvg8PeUAiX1RcS0qPlxvPjWULYjo=
-  file: "$TRAVIS_BUILD_DIR/build/Release/test_addon_$PLATFORM.tar.gz"
-  skip_cleanup: true
-  on:
-    repo: sclairet/node-addon-test
-    tags: true
+  - provider: releases
+    api_key:
+      secure: RehjBoMhqLQ1spnUWXr3rdYvG08mHLBiII7w4z58UyK9ZysC2nd95ZC5fk/JriYKidx1NCcP/yVaRINgeC5TwjtvxZGVlK8dKmA2lgHLVBcDgJWVlcsAxeLcLtRJKeIjS+IjTJGvXRWN0VVeevhajV4kcWDlOWBtJrhFMQQPdTB/ZJaOqTFMCQA35HbHIUCGS3TmkDEAfo4wfmnOSRL3TrmgG4o5Pn8FSRPHayUrmqNc5O5FupG/4muR8OIMFyLHZEkIuk3Ip8PBTMvElJgbOi9b32VQsMzVEcq2zR28euTmfLvW2VR40FSVXa/xfNTLj55qjI4nmjSmGPnnxpsREcLj+TeWIpUQADyHjU0/588i1SYUj3Rh2PzllZNFk2jiORvBtE4SvMQkxL+Idb3fzgd9w6jVSdL8TnJx45PrsU1sBEAhxc6jtyvI19D49uCXqy6gA9sE3vOIgngRJj/HFuBlNfb925C1FG2cq0ogJ5GUKETkW1QfbhyL5Q1r1aICzL8BRZ6THkaNoTBR3YrW7Cd0ZA1ZycHcNH4nLztyD78LtkhqleO1sy9p4w2j1kLomnUOnPDJhiAJLRUsXYl5B/BoxlrTpQFKSgqchVLGT9IVXnoh1jPBfcJz2YqZt/Z5P7X/ec1u8Smi/F5fvg8PeUAiX1RcS0qPlxvPjWULYjo=
+    file: "$TRAVIS_BUILD_DIR/build/Release/test_addon_$PLATFORM.tar.gz"
+    skip_cleanup: true
+    on:
+      repo: sclairet/node-addon-test
+      tags: true
+  - provider: npm
+    email: "stephane.clairet@wakanda.io"
+    api_key:
+      secure: X80jcnMnExBu0Rw/KrkEmP/j2ckwBIST+oi8y2schVzCff3jhlTEaRhZiMr/1+87bC4NzhQMT139WWwazacYC9ymCfE7BeS6+DFXgLkLEssgv29J2ydsmpgDP5pyk+rCbeTtbkCzm5sE8sOpzosLB0vvAFntw/qKngX5JAAJXBLnvDPK00eQMIdEdhHeA63I/AwFhjBmfGzAwHS+IErmRfPj8X3UpBCrrn0+62FalL4/Gf7CvrcpbEU2VgJt23mPvK2JXAQudHQfCx+x6Rub+J0Ski6URmaq3NUhKmlHRG5yCZYlsMxoT5PvaMeOOPPoR2TmNyD6nnf2/Kc4xS/qTWeBX7yzee0YEyjUWCeOYwWs+wWsC+HqqyPcNT4iKK8270C6pFitJo02gCuGkTL7heftuVGqwhlFCY/qwjlD9rkj6cqVaJ1AG9mQX+zvn8kZpdlv7YINY/l37FTXjXhUuLsjtYZNIGgND9YZfmBeNaIGfBQEzdci+gHS37BMLAy11BCMe7HQKB5zRvnYAd1iM/ebXUmv2h7Ih++Msmg2D30PQC/SVNi05mG8h3bT4byTRWjSiTAp6buKAfVx/E+JPBhTSQaVkpZy81c8xQ0F0sXxxJkqYBtY62faSEwI8LKiBjf/XoGCs+FIDK7rlUVC2NUbckgLVUkE3lCaSG4mDrQ=
