@@ -12,8 +12,8 @@
 				"src",
 				"deps"
 			],
-	        "cflags!": ["-fno-rtti", "-fno-exceptions"],
-	        "cflags+": ["-frtti", "-fexceptions"],
+	        "cflags_cc!": ["-fno-rtti", "-fno-exceptions"],
+	        "cflags_cc+": ["-frtti", "-fexceptions"],
 			"conditions":
 			[
 				[
