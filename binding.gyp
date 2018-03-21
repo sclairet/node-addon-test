@@ -5,9 +5,11 @@
 			"src/entry_point.cpp"
 		],
 		"include_dirs": [
-			"src"
+			"src",
+			"deps"
 		],
 		"defines": [
+			"BOOST_DATE_TIME_NO_LIB"
 		]
 	}]
 }

@@ -4,6 +4,12 @@
 #include <string>
 
 
+#include <boost/interprocess/containers/map.hpp>
+#include <boost/interprocess/containers/string.hpp>
+#include <boost/interprocess/managed_shared_memory.hpp>
+#include <boost/interprocess/sync/interprocess_recursive_mutex.hpp>
+
+
 napi_value Hello(napi_env env, napi_callback_info info)
 {
 	napi_value result = nullptr;
