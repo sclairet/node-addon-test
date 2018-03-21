@@ -17,7 +17,7 @@
 			"conditions":
 			[
 				[
-					'OS=="mac"',
+					"OS==\"mac\"",
 					{
 			           	"xcode_settings":
 			           	{
