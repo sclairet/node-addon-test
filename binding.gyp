@@ -13,7 +13,7 @@
 				"deps"
 			],
 	        "cflags!": ["-fno-rtti", "-fno-exceptions"],
-	        "cflags+": ["-frtti", "-fexceptions", "-std=c++1", "-stdlib=libc++"],
+	        "cflags+": ["-frtti", "-fexceptions"],
 			"conditions":
 			[
 				[
