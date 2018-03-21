@@ -1,6 +1,6 @@
 {
-  "name": "test_addon",
-  "version": "1.0.10",
+  "name": "test_addon_simple_hello",
+  "version": "1.0.14",
   "description": "",
   "main": "./lib/index.js",
   "dependencies": {
@@ -12,11 +12,11 @@
     "install": "node-pre-gyp install --fallback-to-build"
   },
   "binary": {
-    "module_name": "test_addon",
+    "module_name": "test_addon_simple_hello",
     "module_path": "./bin/",
     "host": "https://github.com/sclairet/node-addon-test/releases/download/",
     "remote_path": "./v{version}/",
-    "package_name": "test_addon_{platform}.tar.gz"
+    "package_name": "test_addon_simple_hello_{platform}.tar.gz"
   },  
   "repository": {
     "type": "git",
