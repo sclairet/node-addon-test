@@ -2,6 +2,8 @@
 image: Visual Studio 2017
 environment:
  nodejs_version: "9.4"
+ my_gh_key:
+  secure: 6JrDTNKaQ/maix74mVtuytKP4j84llskNk4YyTJcO54ncOXcIrGDVGo0twb9CkH3JdsoKQwD+s8XYMirAcbR1nyfJdBxI2eRuOiPh9F1sGY=
 platform: x64
 configuration: Release
 install:
@@ -23,7 +25,7 @@ artifacts:
 deploy:
  provider: GitHub
  auth_token:
-  secure: 6DJJ5UepnNLY4bIKdJGluD2Ls+3BA0UD1EqIAdkNZr1vZWdkI4iHfzs7UqBO1nD4
+  my_gh_key
  artifact: build\Release\test_addon_simple_hello_win32.tar.gz
  on:
   appveyor_repo_tag: false
