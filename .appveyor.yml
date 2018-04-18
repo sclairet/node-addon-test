@@ -13,6 +13,7 @@ build: off
 build_script:
 - echo %env_toto%
 - echo %ghkey%
+- echo %my_gh_key%
 - node-gyp configure
 - node-gyp build
 - mkdir %APPVEYOR_BUILD_FOLDER%\bin
@@ -25,7 +26,7 @@ artifacts:
 deploy:
  provider: GitHub
  auth_token:
-  secure: 6JrDTNKaQ/maix74mVtuytKP4j84llskNk4YyTJcO54ncOXcIrGDVGo0twb9CkH3JdsoKQwD+s8XYMirAcbR1nyfJdBxI2eRuOiPh9F1sGY=
+  %my_gh_key%
  artifact: build\Release\test_addon_simple_hello_win32.tar.gz
  on:
   appveyor_repo_tag: false
