@@ -9,6 +9,8 @@ install:
 - npm install -g node-gyp
 build: off
 build_script:
+- echo %env_toto%
+- echo %ghkey%
 - node-gyp configure
 - node-gyp build
 - mkdir %APPVEYOR_BUILD_FOLDER%\bin
@@ -21,7 +23,7 @@ artifacts:
 deploy:
  provider: GitHub
  auth_token:
-  secure: 6DJJ5UepnNLY4bIKdJGluD2Ls+3BA0UD1EqIAdkNZr1vZWdkI4iHfzs7UqBO1nD4
+  secure: %ghkey%
  artifact: build\Release\test_addon_simple_hello_win32.tar.gz
  on:
-  appveyor_repo_tag: true
+  appveyor_repo_tag: false
