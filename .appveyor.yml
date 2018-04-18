@@ -23,7 +23,7 @@ artifacts:
 deploy:
  provider: GitHub
  auth_token:
-  secure: %ghkey%
+  secure: 6DJJ5UepnNLY4bIKdJGluD2Ls+3BA0UD1EqIAdkNZr1vZWdkI4iHfzs7UqBO1nD4
  artifact: build\Release\test_addon_simple_hello_win32.tar.gz
  on:
   appveyor_repo_tag: false
